@@ -93,7 +93,7 @@ const Pagos = () => {
         };
 
         try {
-            const response = await axios.post('http://localhost:8000/api/ventas/', payload, {
+            const response = await axios.post('https://dozo01.pythonanywhere.com/api/ventas/', payload, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -220,7 +220,7 @@ const Pagos = () => {
                             src={
                                 producto.imagen.startsWith('http')
                                     ? producto.imagen
-                                    : `http://localhost:8000/${producto.imagen}`
+                                    : `https://dozo01.pythonanywhere.com/${producto.imagen}`
                             }
                             alt={producto.titulo}
                             className="imagen-producto"
