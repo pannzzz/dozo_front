@@ -1,12 +1,12 @@
+/* Estilos generales */
 .breadcrumb-home3 {
     color: #3a3a3a;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    margin-left: -1000px;
+    margin-left: 0; /* Ajustado para centrarse en pantallas pequeñas */
 }
 
-/* Estilos para la página How To */
 .how-to-page {
     padding: 50px;
     background-color: #f7f5f5;
@@ -87,4 +87,99 @@
     font-size: 14px;
     color: #333;
     margin-top: 40px;
+}
+
+/* Responsivo: Tablets */
+@media screen and (max-width: 768px) {
+    .breadcrumb-home3 {
+        font-size: 14px;
+        margin-left: 0;
+    }
+
+    .how-to-page {
+        padding: 30px;
+    }
+
+    .how-to-header h1 {
+        font-size: 35px;
+    }
+
+    .how-to-header h2 {
+        font-size: 18px;
+    }
+
+    .how-to-header p {
+        font-size: 14px;
+    }
+
+    .how-to-steps {
+        flex-direction: column; /* Apila los pasos */
+        gap: 15px;
+    }
+
+    .step {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .add-js-svgTitle {
+        max-width: 300px; /* Ajusta el tamaño máximo para tablets */
+    }
+}
+
+/* Responsivo: Móviles */
+@media screen and (max-width: 480px) {
+
+    .breadcrumb-home3 {
+        font-size: 14px;
+        margin-left: 0;
+        margin-top: 80px;
+
+    }
+
+    .how-to-page {
+        padding: 20px;
+        margin-top: 50px;
+    }
+
+    .how-to-header {
+        margin-top: 20px;
+    }
+
+    .how-to-header h1 {
+        font-size: 28px;
+    }
+
+    .how-to-header h2 {
+        font-size: 16px;
+    }
+
+    .how-to-header p {
+        font-size: 12px;
+    }
+
+    .highlight-text {
+        font-size: 12px;
+    }
+
+    .how-to-steps {
+        gap: 10px;
+    }
+
+    .step {
+        padding: 15px;
+    }
+
+    .step img {
+        width: 100%;
+    }
+
+    .footer-text {
+        margin-top: 10px;
+    }
+
+    .add-js-svgTitle {
+        max-width: 200px; /* Ajusta el tamaño máximo para móviles */
+        margin-left: 30px;
+    }
 }
