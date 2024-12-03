@@ -25,7 +25,7 @@ const NewPassword = () => {
         try {
             // Enviar la nueva contraseña al backend
             const response = await axios.post(
-                `http://localhost:8000/api/reset-password/${userId}/`,
+                `https://dozo01.pythonanywhere.com/api/reset-password/${userId}/`,
                 { new_password: newPassword }
             );
             

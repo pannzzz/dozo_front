@@ -23,7 +23,7 @@ const ProductCardComponent = ({ onProductCountChange }) => {
 
     // Obtener productos al cargar el componente
     useEffect(() => {
-        fetch('http://localhost:8000/api/productos/')
+        fetch('https://dozo01.pythonanywhere.com/api/productos/')
             .then((response) => response.json())
             .then((data) => {
                 setProductos(data);
@@ -199,7 +199,7 @@ const ProductCardComponent = ({ onProductCountChange }) => {
                             <li key={producto.id} className="product-card">
                                 <div className="imagen-container">
                                     <img
-                                        src={`http://localhost:8000/${producto.imagen}`}
+                                        src={`https://dozo01.pythonanywhere.com/${producto.imagen}`}
                                         alt={producto.titulo}
                                         className="product-imagen"
                                     />

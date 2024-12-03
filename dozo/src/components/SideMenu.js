@@ -88,7 +88,7 @@ const SideMenu = ({ closeMenu }) => {
 
                                         {user.email === 'panzzz956@gmail.com' && ( // Mostrar solo si el usuario es administrador
                                             <li className="unu4">
-                                                <a href="http://127.0.0.1:8000/productos/nuevo/" className="add-globalMenu__list01__link">
+                                                <a href="https://dozo01.pythonanywhere.com/productos/nuevo/" className="add-globalMenu__list01__link">
                                                     <img
                                                         src="https://auth.dozo-gift.com/front/v1_1/images/common/icon-magazine.svg"
                                                         alt="Ícono de registro de productos" className="imagen-regalo"

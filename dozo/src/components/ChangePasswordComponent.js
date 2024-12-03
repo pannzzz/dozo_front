@@ -16,7 +16,7 @@ const ChangePasswordComponent = () => {
         setError("");
 
         try {
-            const response = await fetch("http://localhost:8000/api/verify-current-password/", {
+            const response = await fetch("https://dozo01.pythonanywhere.com/api/verify-current-password/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ current_password: currentPassword }),
@@ -43,7 +43,7 @@ const ChangePasswordComponent = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:8000/api/change-password/", {
+            const response = await fetch("https://dozo01.pythonanywhere.com/api/change-password/", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ new_password: newPassword }),

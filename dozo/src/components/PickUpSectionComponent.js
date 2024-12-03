@@ -11,7 +11,7 @@ const PickUpSectionComponent = () => {
 
     useEffect(() => {
         // Llama a la API para obtener productos
-        fetch('http://localhost:8000/api/productos/')
+        fetch('https://dozo01.pythonanywhere.com/api/productos/')
             .then((response) => response.json())
             .then((data) => {
                 // Limitar a los primeros 12 productos
@@ -55,7 +55,7 @@ const PickUpSectionComponent = () => {
                     <li key={item.id || index} className={`pickup-item ${animationClass}`}>
                         <div className="image-container">
                             <img
-                                src={`http://localhost:8000/${item.imagen}`}
+                                src={`https://dozo01.pythonanywhere.com/${item.imagen}`}
                                 alt={item.titulo}
                                 className="pickup-image"
                             />

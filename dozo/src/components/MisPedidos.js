@@ -14,7 +14,7 @@ const MisPedidos = () => {
     useEffect(() => {
         const fetchPedidos = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/pedidos/', {
+                const response = await axios.get('https://dozo01.pythonanywhere.com/api/pedidos/', {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },

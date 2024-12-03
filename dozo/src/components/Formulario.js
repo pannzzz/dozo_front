@@ -110,7 +110,7 @@ const Formulario = () => {
                 role: 'user',
             };
 
-            fetch('http://localhost:8000/api/register/', {
+            fetch('https://dozo01.pythonanywhere.com/api/register/', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const PickUpSectionComponent = () => {
 
     useEffect(() => {
         // Llama a la API para obtener productos
-        fetch('http://localhost:8000/productos-mas-vendidos/') // Ajusta la ruta de la API
+        fetch('https://dozo01.pythonanywhere.com/productos-mas-vendidos/') // Ajusta la ruta de la API
             .then((response) => response.json())
             .then((data) => {
                 // Limitar a los 10 productos más vendidos
@@ -20,7 +20,7 @@ const PickUpSectionComponent = () => {
                     ...producto,
                     imagen: producto.imagen.startsWith('http')
                         ? producto.imagen
-                        : `http://localhost:8000${producto.imagen}`, // Construye la URL completa si es relativa
+                        : `https://dozo01.pythonanywhere.com${producto.imagen}`, // Construye la URL completa si es relativa
                 }));
                 setProductos(productosTop10); // Actualiza con el top 10
             })

@@ -16,7 +16,7 @@ const ForgotPassword = () => {
 
         try {
             // Enviar solicitud al backend para enviar correo
-            const response = await axios.post('http://localhost:8000/api/reset-password/', { email });
+            const response = await axios.post('https://dozo01.pythonanywhere.com/api/reset-password/', { email });
 
             // Mostrar mensaje de éxito y redirigir al usuario
             setSuccessMessage(response.data.message || 'Correo enviado con éxito.');

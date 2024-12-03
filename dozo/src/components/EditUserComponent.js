@@ -23,7 +23,7 @@ const EditUserComponent = () => {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/user/profile/", {
+                const response = await fetch("https://dozo01.pythonanywhere.com/api/user/profile/", {
                     credentials: "include",
                 });
                 if (!response.ok) {
@@ -55,7 +55,7 @@ const EditUserComponent = () => {
         setError(null);
 
         try {
-            const response = await fetch("http://localhost:8000/api/user/profile/edit/", {
+            const response = await fetch("https://dozo01.pythonanywhere.com/api/user/profile/edit/", {
                 method: "PUT",
                 credentials: "include",
                 headers: {

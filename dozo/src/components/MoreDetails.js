@@ -17,7 +17,7 @@ const MoreDetails = () => {
     const navigate = useNavigate(); // Inicializar el hook de navegación
 
     useEffect(() => {
-        fetch(`http://localhost:8000/api/productos/${id}/`)
+        fetch(`https://dozo01.pythonanywhere.com/api/productos/${id}/`)
             .then((response) => response.json())
             .then((data) => setProducto(data))
             .catch((error) => console.error('Error al cargar el producto:', error));
@@ -74,7 +74,7 @@ const MoreDetails = () => {
 
     const imageUrl = producto.imagen.startsWith('http')
         ? producto.imagen
-        : `http://localhost:8000/media/${producto.imagen}`;
+        : `https://dozo01.pythonanywhere.com/media/${producto.imagen}`;
 
     return (
         <>

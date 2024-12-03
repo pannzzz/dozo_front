@@ -68,7 +68,7 @@ const Carrito = () => {
                                 src={
                                     producto.imagen.startsWith('http')
                                         ? producto.imagen
-                                        : `http://localhost:8000/${producto.imagen}`
+                                        : `https://dozo01.pythonanywhere.com/${producto.imagen}`
                                 }
                                 alt={producto.titulo}
                                 className="producto-imagen"

@@ -10,7 +10,7 @@ const NewsSectionComponent = () => {
 
     useEffect(() => {
         // Llama a la API para obtener productos
-        fetch('http://localhost:8000/api/productos/')
+        fetch('https://dozo01.pythonanywhere.com/api/productos/')
             .then((response) => response.json())
             .then((data) => {
                 // Agrupar productos por categoría
@@ -76,7 +76,7 @@ const NewsSectionComponent = () => {
                             </span>
                             <div className="image-container">
                                 <img
-                                    src={`http://localhost:8000/${product.imagen}`}
+                                    src={`https://dozo01.pythonanywhere.com/${product.imagen}`}
                                     alt={product.titulo}
                                 />
                             </div>

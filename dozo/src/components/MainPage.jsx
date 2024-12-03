@@ -15,7 +15,7 @@ const MainPage = () => {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/user/profile/", {
+                const response = await fetch("https://dozo01.pythonanywhere.com/api/user/profile/", {
                     credentials: "include", // Incluir cookies para mantener la sesión
                 });
                 if (!response.ok) {
@@ -32,7 +32,7 @@ const MainPage = () => {
 
         const fetchUserOrders = async () => {
             try {
-                const response = await fetch("http://localhost:8000/api/user/orders/", {
+                const response = await fetch("https://dozo01.pythonanywhere.com/api/user/orders/", {
                     credentials: "include", // Incluir cookies para mantener la sesión
                 });
                 if (!response.ok) {
