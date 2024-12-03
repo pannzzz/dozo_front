@@ -13,7 +13,7 @@ const DetallesPedido = () => {
     useEffect(() => {
         const fetchPedido = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/pedidos/${id}/`, {
+                const response = await axios.get(`https://dozo01.pythonanywhere.com/api/pedidos/${id}/`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },
@@ -52,7 +52,7 @@ const DetallesPedido = () => {
                     {pedido.productos.map((productoItem, index) => (
                         <div key={index} className="pedido-producto">
                             <img
-                                src={`http://localhost:8000/${productoItem.producto.imagen}`}
+                                src={`https://dozo01.pythonanywhere.com/${productoItem.producto.imagen}`}
                                 alt={productoItem.producto.titulo}
                                 className="pedido-producto-imagen"
                                 onError={(e) => e.target.src = 'https://via.placeholder.com/100x100'}

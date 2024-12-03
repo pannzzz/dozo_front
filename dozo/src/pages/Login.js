@@ -6,8 +6,8 @@ import '../styles/Login.css';
 import FooterComponent from '../components/FooterComponent';
 
 axios.defaults.withCredentials = true;
-const LOGIN_URL = 'http://localhost:8000/login/';
-const RESET_PASSWORD_URL = 'http://localhost:8000/api/reset-password/';
+const LOGIN_URL = 'https://dozo01.pythonanywhere.com/login/';
+const RESET_PASSWORD_URL = 'https://dozo01.pythonanywhere.com/api/reset-password/';
 
 const Login = () => {
     const [email, setEmail] = useState('');

@@ -24,7 +24,7 @@ const Pagos = () => {
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
-                const response = await axios.get('http://localhost:8000/api/user/profile/', {
+                const response = await axios.get('https://dozo01.pythonanywhere.com/api/user/profile/', {
                     withCredentials: true, // Incluir cookies para la autenticación
                 });
                 setFormData({
