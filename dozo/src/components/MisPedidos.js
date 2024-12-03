@@ -2,35 +2,39 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import '../styles/Mispedidos.css'; // Reutilizamos los estilos
+import '../styles/Mispedidos.css';
 import FooterComponent from '../components/FooterComponent';
-
 
 const MisPedidos = () => {
     const [pedidos, setPedidos] = useState([]);
-    const [error, setError] = useState(null);
-    const navigate = useNavigate(); // Hook para redirigir
+    const [error, setError] = useState(false);
+    const navigate = useNavigate();
+
+    // Definimos fetchPedidos fuera del useEffect
+    const fetchPedidos = async () => {
+        try {
+            const response = await axios.get('https://dozo01.pythonanywhere.com/api/pedidos/', {
+                headers: {
+                    Authorization: `Bearer ${localStorage.getItem('token')}`,
+                },
+            });
+            setPedidos(response.data.pedidos || []);
+            setError(false); // Restablecer el estado de error si la solicitud es exitosa
+        } catch (err) {
+            console.error('Error al obtener los pedidos:', err);
+            setError(true);
+        }
+    };
 
     useEffect(() => {
-        const fetchPedidos = async () => {
-            try {
-                const response = await axios.get('https://dozo01.pythonanywhere.com/api/pedidos/', {
-                    headers: {
-                        Authorization: `Bearer ${localStorage.getItem('token')}`,
-                    },
-                });
-                setPedidos(response.data.pedidos);
-            } catch (err) {
-                console.error('Error al obtener los pedidos:', err);
-                setError('Error al obtener los pedidos. Por favor, inténtelo de nuevo más tarde.');
-            }
-        };
-
         fetchPedidos();
     }, []);
 
+    const handleRetry = () => {
+        fetchPedidos(); // Reintentar la solicitud al presionar el botón
+    };
+
     const handleMoreDetails = (id) => {
-        console.log('Redirigiendo a detalles del pedido con ID:', id);
         navigate(`/detalles-pedido/${id}`);
     };
 
@@ -39,8 +43,12 @@ const MisPedidos = () => {
             <>
                 <Navbar initialScrolled={true} />
                 <div className="carrito-page1">
-                    <h2 className="error">{error}</h2>
+                    <h2 className="error">Hubo un problema al cargar tus pedidos.</h2>
+                    <button className="retry-button" onClick={handleRetry}>
+                        Reintentar
+                    </button>
                 </div>
+                <FooterComponent />
             </>
         );
     }
@@ -52,6 +60,7 @@ const MisPedidos = () => {
                 <div className="carrito-page1">
                     <h2>No has realizado ningún pedido.</h2>
                 </div>
+                <FooterComponent />
             </>
         );
     }
@@ -79,7 +88,7 @@ const MisPedidos = () => {
                     {pedidos.map((pedido) => (
                         <div key={pedido.id} className="carrito-productozzz">
                             <img
-                                src={`https://i.pinimg.com/736x/44/82/a9/4482a9b72bed00a223e97405a8ce91e2.jpg`} // Placeholder o URL real
+                                src={`https://i.pinimg.com/736x/44/82/a9/4482a9b72bed00a223e97405a8ce91e2.jpg`}
                                 alt="Imagen del producto"
                                 className="producto-imagenzzz"
                             />
@@ -113,7 +122,6 @@ const MisPedidos = () => {
                 </div>
             </div>
             <FooterComponent />
-
         </>
     );
 };
